@@ -3,13 +3,14 @@ import random
 import time
 
 #_Classes________________________________________________________________
+#-Settings---------------------------------------------------------------
 class Settings(object):
     #-screen---------------------
     size    = [700, 500]
     screen  = pygame.display.set_mode(size)
     clock   = pygame.time.Clock()
     done    = False
-    #-Colors---------------------
+    #-colors---------------------
     white       = (255, 255, 255)
     black       = (0, 0, 0)
     green       = (0, 255, 0)
@@ -18,7 +19,7 @@ class Settings(object):
     red         = (255, 0, 0)
     brown       = (169,72,23)
 
-#_Sledge_________________________________________________________________
+#-Sledge-----------------------------------------------------------------
 class Sledge(Settings):
     def __init__(self, px, py, pscreen):
         super().__init__()
@@ -53,7 +54,7 @@ class Sledge(Settings):
 
     def hit(self):
         self.hit = True
-#_Game__________________________________________________________
+#-Game------------------------------------------------------------------
 class Game(Settings):
     def __init__(self):
         super().__init__()
@@ -101,6 +102,6 @@ class Game(Settings):
             #-Update-screen-------------------------------------------------------
             pygame.display.flip()           
 
-
+#_Execute_________________________________________________________________________
 game = Game()
 game.main_loop()
